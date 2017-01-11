@@ -35,8 +35,8 @@ body {
 /* --------------- header --------------- */
 
 #header {
-  background-color: #000000;
-  height: 40px;
+  background-color: #27313e;
+  height: 44px;
 }
 
 #header div {
@@ -56,17 +56,18 @@ body {
 #jenkins-head-icon {
   position: absolute;
   bottom: 0px;
+  display: none;
 }
 
 #jenkins-name-icon {
   position: absolute;
-  bottom: 3px;
-  left: 32px;
+  bottom: 0px;
+  /*left: 22px;*/
 }
 
 #header .searchbox, #header .login {
   float: right;
-  padding: 6px 11px;
+  padding: 7px 11px;
 }
 
 #breadcrumbBar, #footer-container, .top-sticker-inner {

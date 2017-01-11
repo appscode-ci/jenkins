@@ -1470,50 +1470,130 @@ DIV.yahooTree td {
     display: none;
 }
 
+/* ========================= visible-am-button {{// Anwar css }}========================= */
+
+
+#visible-am-button {
+  text-align: center;
+  font-size: 13px !important;
+  font-weight: bold;
+  background-color: #e01716;
+  color: #fff;
+  margin: 0;
+  line-height: 20px !important;
+  text-decoration: none;
+  min-width: 20px !important;
+  display: inline-block;
+  border-radius: 5px;
+  position: relative;
+  transition: all .1s;
+  height: 20px;
+  top: 10px;
+}
+
+#visible-am-container #visible-am-button:after{
+  display: none !important;
+}
+
+#visible-am-container div#visible-am-list {
+  position: absolute;
+  top: 43px !important;
+  width: 320px;
+  right: 150px !important;
+  /* margin-left: 2%; */
+  height: auto;
+  padding: 20px;
+  border: 0 solid #aaa;
+  text-align: left;
+  display: block;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 7px 20px rgba(0,0,0,.1);
+  transition: all .15s cubic-bezier(.84,.03,.21,.96);
+  opacity: 0;
+  transform: scale(0);
+}
+
+#visible-am-container p a{
+  background: #3bb878;
+  margin: 0;
+  padding: 10px;
+  border: 0;
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 0px;
+  border-radius: 3px;
+}
+
+
 /* ========================= search box at the top-right of the page ========================= */
+
 #search-box {
-  background: white url(../images/16x16/search.png) no-repeat 2px center;
-  height: 24px;
-  padding-left: 20px;
-  width: 15em;
-  position: static; 
-  border: 1px solid #DDD;
-  border-radius: 4px;
-  box-shadow: 0 0 5px #DDD inset;
+  /*background: #16253C url(../images/16x16/search.png) no-repeat 180px center;*/
+  background: #16253C;
+  height: 28px;
+  padding:6px;
+  width: 205px !important;
+  position: static;
+  color: #ffffff;
+  font-size: 13px;
+  border: 1px solid #000000;
+  border-radius: 3px;
   outline: none;
 }
 
 #search-box-completion {
   text-align: left;
-  width:25em;
+  width: 205px !important;
   position: absolute;
   z-index: 1000;
 }
 
 #search-box-completion .yui-ac-content {
-  border: 1px solid black;
-  width:25em;
-  background-color: white;
+  width: 205px !important;
   overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 10px 50px 0 rgba(0,0,0,.25);
+  border: 0 solid #eaeaea;
+  border-radius:3px;
+  /*border-bottom-left-radius: 3px;*/
+  /*border-bottom-right-radius: 3px;*/
 }
 
 #search-box-completion UL {
   padding: 0 0;
-  width: 100%;
+  width: 205px !important;
   margin: 0 0;
+  background: #ffffff;
   list-style: none;
 }
 #search-box-completion LI {
-  padding-left:20px;
+  padding:10px;
   white-space:nowrap;
+  color: #4B4D51;
+  display: block;
+  font-size: 13px;
+  border-top: 1px solid #dfe1e9;
 }
+
+#search-box-completion LI:first-child{
+  border-top: 0;
+}
+
 #search-box-completion LI.yui-ac-highlight {
-  background: #729FCF;
+  /*background: #729FCF;*/
+  background: #f3f4f5;
+  cursor: pointer;
+  color: #27313e;
 }
 #search-box-minWidth {
   position:absolute;
   visibility: hidden;
-  width:15em;
+  width: 205px !important;
 }
 
 #search-box-sizer {
