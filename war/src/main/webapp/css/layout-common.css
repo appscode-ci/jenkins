@@ -30,6 +30,8 @@ html {
 body {
   margin: 0;
   padding: 0 0 40px 0;
+  display: block;
+  background: #e6e6e6;
 }
 
 /* --------------- header --------------- */
@@ -71,10 +73,18 @@ body {
 }
 
 #breadcrumbBar, #footer-container, .top-sticker-inner {
-  background-color: #f6faf2;
+  background-color: #ffffff;
 }
 
 /* -------------------------------------- */
+
+.row.pane-content {
+  padding: 0 10px;
+}
+
+td.pane {
+  padding: 0 10px;
+}
 
 #page-body.clear:after {
   clear: both;
@@ -83,17 +93,27 @@ body {
 }
 
 #side-panel {
-  padding: 15px 15px 40px 15px;
+  /*padding: 15px;*/
   float: left;
-  width: 320px;
+  width: 250px;
+  background: #ffffff;
+  position: absolute;
+  height: calc(100% - 114px);
 }
 
 #main-panel {
-  padding: 15px 15px 40px 15px;
+  margin: 16px 16px 0 16px;
+  background: #ffffff;
+  padding: 15px;
+  width: calc(100% - 282px);
+  display: inline-block;
+  border-radius: 3px;
+  /*border-top-left-radius: 3px;*/
+  /*border-top-right-radius: 3px;*/
 }
 
 body.two-column #main-panel {
-  margin-left: 320px;
+  margin-left: 366px;
 }
 
 @media (max-width: 970px) {
@@ -110,21 +130,42 @@ body.two-column #main-panel {
 
 @media (min-width: 1170px) {
   body.two-column #side-panel {
-    width: 360px;
+    width: 250px;
   }
 
   body.two-column #main-panel {
-    margin-left: 360px;
+    margin-left: 266px;
   }
 }
+
+
+
+
+
+/* --------------- main-panel --------------- */
+
+a#description-link {
+  background: #2196F3;
+  border-radius: 3px;
+  padding: 5px 8px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12px;
+}
+
+a#description-link img {
+  display: none;
+}
+
 
 /* --------------- footer --------------- */
 
 footer {
   padding: 11px 0;
-  background-color: #f6faf2;
-  border-top: 1px solid #d3d7cf;
-  border-bottom: 1px solid #f6faf2;
+  background-color: #ffffff;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 0 solid #f6faf2;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -137,6 +178,15 @@ footer {
 footer span {
   margin-left: 15px;
   line-height: 14px;
+  color: #949494;
+}
+
+footer span.rest_api a {
+  color: #949494;
+}
+
+footer span.jenkins_ver a {
+  color: #949494;
 }
 
 /* -------------------------------------- */
