@@ -219,3 +219,11 @@ select.setting-input {
   background: transparent;
   border-radius: 3px !important;
 }
+
+.section-header {
+  font-weight: bold;
+  border-bottom: 1px solid #f3f3f3;
+  margin-bottom: 0.2em;
+  margin-top: 0.4em;
+  padding-bottom: 6px;
+}
