@@ -28,6 +28,12 @@ a {
   outline: none;
 }
 
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 #tasks .task {
     margin-bottom: 0px;
@@ -152,6 +158,11 @@ dt {
 a:link {
   text-decoration: none;
   color: #464C5C;
+}
+
+a:link:hover {
+  text-decoration: none;
+  color: #3bb878;
 }
 
 a:visited {
@@ -473,7 +484,7 @@ table.stripped-odd tr:nth-child(odd) {
   background: #fbfbfb;
 }
 table.stripped tr:hover, table.stripped-even tr:hover, table.stripped-odd tr:hover {
-  background: #efefef !important;
+  background: #f7f7f7 !important;
 }
 
 div.pane-header {
@@ -504,8 +515,8 @@ th.pane {
 /* bigtable */
 
 .bigtable tr {
-  border: 1px solid #bbb;
-  /*padding: 3px 4px 3px 4px;*/
+  border: 1px solid #f3f3f3;
+  text-align: left;
 }
 table.bigtable.pane > tbody > tr > td:last-child {
   border-right: none;
@@ -695,17 +706,18 @@ LABEL.attach-previous {
 }
 
 .bottom-sticker, #bottom-sticker {
-    width:  100%;   /* it needs to occupy the entire width or else the underlying content will see through */
+    /*width:  100%;   !* it needs to occupy the entire width or else the underlying content will see through *!*/
+    width: 83%;
 }
 .bottom-sticker-inner {
-    background: white;
-    padding: 1em 0;
+    background: #fff;
+    padding: 1em;
 }
-.bottom-sticker-edge {
-    height:16px;
-    background-image: url("../images/bottom-sticker-top-edge.png");
-    background-repeat: repeat-x;
-}
+/*.bottom-sticker-edge {*/
+    /*height:16px;*/
+    /*background-image: url("../images/bottom-sticker-top-edge.png");*/
+    /*background-repeat: repeat-x;*/
+/*}*/
 
 .top-sticker, #top-sticker {
     width:  100%;   /* it needs to occupy the entire width or else the underlying content will see through */
@@ -789,11 +801,14 @@ LABEL.attach-previous {
 /* ====================== help ===================================== */
 
 .help {
-  display: none;  /* hidden until loaded */
-  border: solid #bbb 1px;
-  background-color: #f0f0f0;
-  padding: 1em;
-  margin-bottom: 1em;
+    display: none;
+    border: solid #eaeaea 1px;
+    background-color: #f9f9f9;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 3px;
+    width: 88%;
+    float: right;
 }
 
 .help .from-plugin {
@@ -862,7 +877,6 @@ LABEL.attach-previous {
 }
 #projectstatus th {
   text-align: left;
-  padding: 7px;
 }
 #projectstatus tbody tr:first-child th:first-child {
   border-top-left-radius: 4px;
@@ -1257,11 +1271,11 @@ TABLE.fileList TD.fileSize {
 /* ========================= sortable table ========================= */
 table.sortable a.sortheader {
   text-decoration: none;
-  color: black;
+  color: #464C5C;
   display: block;
 }
 table.sortable span.sortarrow {
-  color: black;
+  color: #464C5C;
   text-decoration: none;
 }
 
@@ -2009,3 +2023,5 @@ body.no-sticker #bottom-sticker {
     width: 48px;
     height: 48px;
 }
+
+

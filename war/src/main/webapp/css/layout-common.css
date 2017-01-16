@@ -108,9 +108,19 @@ td.pane {
   width: calc(100% - 282px);
   display: inline-block;
   border-radius: 3px;
-  /*border-top-left-radius: 3px;*/
-  /*border-top-right-radius: 3px;*/
 }
+
+
+/*#main-panel {*/
+  /*margin: 16px 0 0 0;*/
+  /*background: #ffffff;*/
+  /*padding: 15px;*/
+  /*width: 100%;*/
+  /*display: inline-block;*/
+  /*border-radius: 0;*/
+/*}*/
+
+
 
 body.two-column #main-panel {
   margin-left: 366px;
@@ -190,3 +200,22 @@ footer span.jenkins_ver a {
 }
 
 /* -------------------------------------- */
+
+
+div#resizeContainer {
+  border: 0 solid #f3f3f3 !important;
+}
+
+#yui-gen1 {
+  display: none;
+}
+
+DIV.textarea-handle {
+  display: none;
+}
+
+select.setting-input {
+  height: 33px;
+  background: transparent;
+  border-radius: 3px !important;
+}
