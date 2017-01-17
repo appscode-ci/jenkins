@@ -110,17 +110,13 @@ td.pane {
   border-radius: 3px;
 }
 
-
-/*#main-panel {*/
-  /*margin: 16px 0 0 0;*/
-  /*background: #ffffff;*/
-  /*padding: 15px;*/
-  /*width: 100%;*/
-  /*display: inline-block;*/
-  /*border-radius: 0;*/
-/*}*/
-
-
+@media only screen and (max-width: 668px) {
+  #main-panel {
+    margin: 16px;
+    width: auto !important;
+    padding: 16px 0;
+  }
+}
 
 body.two-column #main-panel {
   margin-left: 366px;

@@ -471,12 +471,12 @@ pre.console {
 /* pane */
 
 .pane-frame {
-    border: solid 0 #f0f0f0;
+    border: solid 1px #f0f0f0;
     border-radius: 0;
 }
 
 #side-panel .pane-frame:hover, #side-panel .pane-frame.mouseover {
-    border: solid 0px #f0f0f0;
+    border: solid 1px #f0f0f0;
 }
 
 table#projectstatus {
@@ -500,7 +500,7 @@ table#projectstatus {
 table.pane {
     width: 100%;
     border-collapse: collapse;
-    border: 1px #bbb solid;
+    border: 0 #bbb solid;
 }
 
 td.pane {
@@ -552,7 +552,7 @@ th.pane {
 /* bigtable */
 
 .bigtable tr {
-    border: 1px solid #f3f3f3;
+    border: 0 solid #f3f3f3;
     text-align: left;
 }
 
@@ -561,7 +561,7 @@ table.bigtable.pane > tbody > tr > td:last-child {
 }
 
 .pane-frame table, .pane-frame .bigtable tr {
-    border: none; /* Border will be provided by the pane-frame */
+    /*border: none; !* Border will be provided by the pane-frame *!*/
 }
 
 @media only screen and (max-width: 640px) {
@@ -1000,10 +1000,12 @@ table.parameters > tbody:hover {
 .healthReport:hover div.healthReportDetails, .healthReport.hover div.healthReportDetails {
     display: block;
     position: absolute;
-    background-color: #ffe;
-    border: 1px solid #bbb;
-    margin-left: 32px; /* move it across a bit */
+    background-color: #ffffff !important;
+    border: 0px solid #bbb;
+    margin-left: 0; /* move it across a bit */
     z-index: 26;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
 }
 
 .healthReport div.healthReportDetails table {
@@ -1828,7 +1830,6 @@ TEXTAREA.rich-editor {
 #plugins .excerpt {
     white-space: normal;
     margin-top: 0.5em;
-    padding-left: 2em;
     color: #888a85;
 }
 
@@ -2199,5 +2200,150 @@ body.no-sticker #bottom-sticker {
     width: 48px;
     height: 48px;
 }
+
+
+#filter-box {
+    background:#fff;
+    background-image: none;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.02);
+    padding: 6px;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+#filter-box:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+.CodeMirror {
+    border: 1px solid #ddd !important;
+}
+
+.yui-skin-sam .yuimenuitem-selected {
+    background-color: rgba(59, 184, 120, 0.12) !important;
+}
+
+/******  for new jobs page  *****/
+
+
+#add-item-panel form > .header {
+    position: relative;
+    border: 1px solid #ddd !important;
+    border-bottom: 0 solid #ddd !important;
+    border-bottom: none;
+    background: #fff !important;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    z-index: 5;
+}
+
+#add-item-panel input {
+    font-size: 1.5em;
+    background-color: #fff;
+    padding: 0 10px !important;
+    border: 1px solid #ddd;
+    width: 50%;
+    height: 33px;
+    outline: none;
+    min-width: 100% !important;
+    border-radius: 3px;
+}
+
+#add-item-panel input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+
+
+#add-item-panel form > .footer {
+    border-left: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+    border-bottom: 1px solid #ddd !important;
+    width: 100%;
+}
+
+#add-item-panel .categories.flat .category:last-child {
+    padding: 0 !important;
+}
+
+.j-item-options li:hover, .j-item-options li:focus {
+    border-color: #cccccc;
+    background: rgba(251, 251, 251, 0.65) !important;
+    outline: 0;
+}
+.j-item-options li {
+    border: 0 solid transparent !important;
+    border-bottom: 1px solid #ddd !important;
+    border-radius: 0 !important;
+    outline: none;
+    margin: 0!important;
+}
+
+.j-item-options li:last-child {
+    border-bottom: 0 solid #ddd !important;
+}
+
+
+#add-item-panel .categories{
+    background: transparent !important;
+    border: 1px solid #dddddd !important;
+}
+#add-item-panel .item-copy {
+    border: 1px solid #ddd !important;
+    border-top: none !important;
+     background-color: #fff !important;
+    border-bottom: none !important;
+}
+
+#add-item-panel form > .footer {
+    background: #fff !important;
+}
+
+#add-item-panel .add-item-name .input-validation-message, #add-item-panel .add-item-copy .input-validation-message {
+    color: red;
+    padding-top: 2px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#add-item-panel form > .footer .btn-decorator {
+    width: 100% !important;
+    border-top-right-radius: 0 !important;
+    border: 0 solid #aaccbb !important;
+    background: #fff !important;
+    padding: 10px 15px !important;
+    text-align: left !important;
+    box-shadow: 0 -6px 6px 0 rgba(0,0,0,.01);
+}
+
+@media only screen and (max-width: 668px) {
+    #add-item-panel form > .footer .btn-decorator{
+        left: 0;
+    }
+}
+
+#add-item-panel form > .footer .btn-decorator button[type=submit] {
+    padding: 0 20px !important;
+    background-color: #3bb878 !important;
+    border-width: 0 !important;
+    color: #fff !important;
+}
+
+
+/******************* configure page new css *******************/
 
 
