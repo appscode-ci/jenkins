@@ -33,16 +33,21 @@ h1 {
     margin: 0;
     font-size: 20px;
     font-weight: bold;
+    line-height: 40px;
 }
 
 #tasks .task {
-    margin-bottom: 0px;
-    padding: 0 15px;
+    margin-bottom: 0;
+    padding: 0 5px;
     font-size: 14px;
     white-space: nowrap;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
 }
 
+
+#tasks .task:first-child{
+    border-top: 0 solid #ddd;
+}
 /* buildQueue */
 
 /*#buildQueue {*/
@@ -441,7 +446,7 @@ pre.console {
     text-decoration: none;
     display: inline-block;
     padding: 10px 0;
-    width: 91.3%;
+    width: 86.5%;
     font-size: 13px;
     font-weight: 600;
 }
@@ -457,6 +462,7 @@ pre.console {
 
 .subtasks {
     padding-left: 1em;
+    border-top: 1px solid #ddd;
 }
 
 .main-table {
@@ -465,7 +471,7 @@ pre.console {
 /* pane */
 
 .pane-frame {
-    border: solid 0px #f0f0f0;
+    border: solid 0 #f0f0f0;
     border-radius: 0;
 }
 
@@ -795,6 +801,7 @@ LABEL.attach-previous {
     font-weight: bold;
     padding-left: 20px;
     min-height: 16px;
+    font-size: 12px;
     line-height: 16px;
     background-image: url("../images/16x16/error.png");
     background-position: left center;
@@ -856,8 +863,6 @@ LABEL.attach-previous {
     padding: 1em;
     margin-bottom: 1em;
     border-radius: 3px;
-    width: 88%;
-    float: right;
 }
 
 .help .from-plugin {
@@ -1484,11 +1489,14 @@ TABLE.fingerprint-in-build TD {
 /* ========================= repeatable elements ========================= */
 
 .repeated-chunk {
-    border: 2px dashed transparent;
+    border: 1px dashed #f3f3f3;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
 }
 
 .repeated-chunk.hover {
-    border-color: #CCC;
+    border-color: #ddd;
 }
 
 .repeated-chunk .show-if-last {
@@ -1803,9 +1811,10 @@ TEXTAREA.rich-editor {
 
 .hetero-list-container .dd-handle, .repeated-container .dd-handle {
     cursor: move;
-    background-image: url(../images/grip.png);
-    background-repeat: repeat-y;
-    padding-left: 20px;
+    /*background-image: url(../images/grip.png);*/
+    /*background-repeat: repeat-y;*/
+    /*padding-left: 20px;*/
+
 }
 
 .hetero-list-container.with-drag-drop .repeated-chunk {
