@@ -2415,3 +2415,24 @@ tr.config-table-top-row.config_buttons {
         left: 0 !important;
     }
 }
+
+
+#jenkins .jenkins-config table .repeated-chunk {
+    border: 1px dotted rgba(0, 0, 0, 0.1) !important;
+    margin: 20px 0px !important;
+    border-radius: 3px !important;
+    background: #fff !important;
+}
+
+#jenkins .jenkins-config table .repeated-chunk, #jenkins .jenkins-config table tr[nameref^="rowSetStart"], #jenkins .jenkins-config table tr[nameref^="cb"], #jenkins .jenkins-config table tr[nameref^="radio-block"] {
+    background: #fff !important;
+    border-left: 0 solid rgba(0, 0, 0, 0.1) !important;
+}
+
+
+#jenkins .jenkins-config table #bottom-sticker .yui-button button {
+    background: #3bb878 !important;
+    padding: 0 10px !important;
+    color: #fff !important;
+    border: none !important;
+}
