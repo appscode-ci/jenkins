@@ -2347,3 +2347,71 @@ body.no-sticker #bottom-sticker {
 /******************* configure page new css *******************/
 
 
+.jenkins-config-widgets {
+    border: 1px solid #f3f3f3 !important;
+    background: #ffffff !important;
+}
+
+.jenkins-config-widgets .form-config.tabBarFrame .tabBar .tab:hover {
+    background: #f3f3f3 !important;
+     color: #999 !important;
+}
+
+.jenkins-config-widgets .form-config.tabBarFrame .tabBar .tab.active {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-bottom: 1px solid #fff !important;
+}
+
+#jenkins .jenkins-config {
+    border: 1px solid #f3f3f3 !important;
+    background: #ffffff !important;
+}
+
+.jenkins-config-widgets .form-config.tabBarFrame {
+    position: relative;
+    border-bottom: solid 1px #fff !important;
+}
+
+#jenkins .jenkins-config table .hetero-list-container, #jenkins .jenkins-config table .repeated-container, #jenkins .jenkins-config table tr.optional-block-start, #jenkins .jenkins-config table tr.radio-block-start {
+     border-left: 0 solid rgba(0, 0, 0, 0.1) !important;
+}
+
+
+#jenkins .jenkins-config table .bottom-sticker-inner {
+    padding: 10px;
+    border-top-right-radius: 0;
+    border: 0px solid #aaccbb;
+    background: #fff;
+}
+
+
+#jenkins .jenkins-config table .bottom-sticker-inner {
+    padding: 10px !important;
+    border-top-right-radius: 0 !important;
+    border: 0 solid #aaccbb !important;
+    background: #fff !important;
+}
+
+tr.config-table-top-row.config_buttons {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 -6px 6px 0 rgba(0,0,0,.01);
+}
+
+#jenkins .jenkins-config table .bottom-sticker, #jenkins .jenkins-config table #bottom-sticker {
+    margin-left: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    width: 75.4% !important;
+    left: 235px !important;
+}
+
+@media only screen and  ( max-width: 668px){
+
+    #jenkins .jenkins-config table .bottom-sticker, #jenkins .jenkins-config table #bottom-sticker {
+        width: 100% !important;
+        left: 0 !important;
+    }
+}

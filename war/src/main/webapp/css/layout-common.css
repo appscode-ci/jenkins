@@ -82,14 +82,14 @@ td.pane {
   padding: 0 10px;
 }
 
-/*#page-body.clear:after {
+#page-body.clear:after {
   clear: both;
   content: "";
   display: table;
 }
 
 #side-panel {
-  !*padding: 15px;*!
+  /*padding: 15px;*/
   float: left;
   width: 250px;
   background: #ffffff;
@@ -104,26 +104,26 @@ td.pane {
   width: calc(100% - 282px);
   display: inline-block;
   border-radius: 3px;
-}*/
-
-
-
-#page-body.clear:after {
-  clear: both;
-  content: "";
-  display: table;
 }
 
-#side-panel {
-  float: left;
-  width: 320px;
-  background: #ffffff;
-}
 
-#main-panel {
-  background: #ffffff;
-  padding: 16px 16px 40px 16px;
-}
+
+/*#page-body.clear:after {*/
+  /*clear: both;*/
+  /*content: "";*/
+  /*display: table;*/
+/*}*/
+
+/*#side-panel {*/
+  /*float: left;*/
+  /*width: 320px;*/
+  /*background: #ffffff;*/
+/*}*/
+
+/*#main-panel {*/
+  /*background: #ffffff;*/
+  /*padding: 16px 16px 40px 16px;*/
+/*}*/
 
 
 @media only screen and (max-width: 668px) {
