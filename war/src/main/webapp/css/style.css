@@ -92,6 +92,14 @@ form {
     margin: 0;
 }
 
+@media only screen and (max-width: 668px) {
+
+    form {
+        margin: 0;
+        overflow-x: scroll;
+    }
+}
+
 td {
     vertical-align: top;
 }
@@ -503,6 +511,14 @@ table.pane {
     border: 0 #bbb solid;
 }
 
+
+@media only screen and (max-width: 668px) {
+
+    table.pane {
+        overflow-x: scroll;
+        display: block;
+    }
+}
 td.pane {
     padding: 3px 4px 3px 4px;
     vertical-align: middle;
