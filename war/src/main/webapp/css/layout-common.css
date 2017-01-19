@@ -98,7 +98,7 @@ td.pane {
 }
 
 #main-panel {
-  margin: 16px 16px 0 16px;
+  margin: 16px;
   background: #ffffff;
   padding: 15px;
   width: calc(100% - 282px);
@@ -126,13 +126,17 @@ td.pane {
 /*}*/
 
 
-@media only screen and (max-width: 668px) {
+/*@media only screen and (max-width: 668px) {
   #main-panel {
     margin: 16px;
-    width: auto !important;
-    padding: 16px 0;
+    width: 91.5%;
+    padding: 16px;
   }
-}
+  #side-panel {
+    width: 100%;
+    position: relative;
+  }
+}*/
 
 body.two-column #main-panel {
   margin-left: 366px;
@@ -140,13 +144,18 @@ body.two-column #main-panel {
 
 @media (max-width: 970px) {
   body.two-column #side-panel {
-    width: 100%;
+    width: 91.5%;
+    margin: 16px;
     float: none;
+    position: relative;
     padding-bottom: 20px;
   }
 
   body.two-column #main-panel {
-    margin-left: 0;
+    margin-left: 16px;
+    margin: 16px;
+    width: 91.5%;
+    padding: 16px;
   }
 }
 
@@ -195,6 +204,12 @@ footer {
   clear: both;
   font-size: 12px;
   text-align: right;
+}
+
+@media (max-width: 970px) {
+  footer {
+    position: relative;
+  }
 }
 
 footer span {

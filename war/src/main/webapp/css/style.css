@@ -755,12 +755,17 @@ LABEL.attach-previous {
 }
 
 .bottom-sticker, #bottom-sticker {
-    /*width:  100%;   !* it needs to occupy the entire width or else the underlying content will see through *!*/
     width: 85.1%;
     left: 267px !important;
     box-shadow: 0 -6px 6px 0 rgba(0,0,0,.01);
 }
 
+@media  only screen and ( max-width: 668px){
+
+    .bottom-sticker, #bottom-sticker {
+        left: 0 !important;
+    }
+}
 .bottom-sticker-inner {
     background: #fff;
     padding: 1em;
@@ -2249,7 +2254,9 @@ body.no-sticker #bottom-sticker {
     z-index: 5;
 }
 
-#add-item-panel input {
+
+
+#add-item-panel input[type="text"] {
     font-size: 1.5em;
     background-color: #fff;
     padding: 0 10px !important;
