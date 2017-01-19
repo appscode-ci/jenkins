@@ -764,6 +764,7 @@ LABEL.attach-previous {
 
     .bottom-sticker, #bottom-sticker {
         left: 0 !important;
+        width: 100%;
     }
 }
 .bottom-sticker-inner {
