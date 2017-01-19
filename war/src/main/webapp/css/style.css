@@ -2366,6 +2366,7 @@ body.no-sticker #bottom-sticker {
 #jenkins .jenkins-config {
     border: 1px solid #f3f3f3 !important;
     background: #ffffff !important;
+    border-top: none !important;
 }
 
 .jenkins-config-widgets .form-config.tabBarFrame {
@@ -2418,7 +2419,7 @@ tr.config-table-top-row.config_buttons {
 
 
 #jenkins .jenkins-config table .repeated-chunk {
-    border: 1px dotted rgba(0, 0, 0, 0.1) !important;
+    border: 1px dotted #ddd !important;
     margin: 20px 0px !important;
     border-radius: 3px !important;
     background: #fff !important;
@@ -2426,9 +2427,13 @@ tr.config-table-top-row.config_buttons {
 
 #jenkins .jenkins-config table .repeated-chunk, #jenkins .jenkins-config table tr[nameref^="rowSetStart"], #jenkins .jenkins-config table tr[nameref^="cb"], #jenkins .jenkins-config table tr[nameref^="radio-block"] {
     background: #fff !important;
-    border-left: 0 solid rgba(0, 0, 0, 0.1) !important;
+    border-left: 0 solid #ddd !important;
 }
 
+#jenkins .jenkins-config table .repeated-chunk, #jenkins .jenkins-config table tr[nameref^="rowSetStart"], #jenkins .jenkins-config table tr[nameref^="cb"], #jenkins .jenkins-config table tr[nameref^="radio-block"] {
+    background: #fff !important;
+    border-left: 0 solid rgba(0, 0, 0, 0.1) !important;
+}
 
 #jenkins .jenkins-config table #bottom-sticker .yui-button button {
     background: #3bb878 !important;
