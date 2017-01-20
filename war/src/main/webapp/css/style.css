@@ -1792,6 +1792,16 @@ DIV.yahooTree td {
 
 TEXTAREA {
     margin-bottom: 0;
+    width: 100%;
+    border: 1px solid #f3f3f3;
+    outline: none;
+}
+
+TEXTAREA:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
 DIV.textarea-handle {
@@ -2294,13 +2304,10 @@ body.no-sticker #bottom-sticker {
     margin: 0 !important;
 }
 
-.j-item-options li:last-child {
-    border-bottom: 0 solid #ddd !important;
-}
-
 #add-item-panel .categories {
     background: transparent !important;
     border: 1px solid #dddddd !important;
+    border-bottom: none !important;
 }
 
 #add-item-panel .item-copy {
@@ -2436,4 +2443,9 @@ tr.config-table-top-row.config_buttons {
     padding: 0 10px !important;
     color: #fff !important;
     border: none !important;
+}
+
+
+#add-item-panel .categories.flat .category:first-child {
+    padding: 0 !important;
 }

@@ -87,6 +87,11 @@ td.pane {
     display: table;
 }
 
+div#page-body {
+    margin: 0 16px 0  0;
+}
+
+
 #side-panel {
     /*padding: 15px;*/
     float: left;
@@ -97,31 +102,37 @@ td.pane {
 }
 
 #main-panel {
-    margin: 16px;
+    margin-top: 16px;
     background: #ffffff;
     padding: 15px;
-    width: calc(100% - 282px);
+    width: calc(100% - 266px);
     display: inline-block;
-    border-radius: 3px;
+    border-radius: 0px;
 }
 
 body.two-column #main-panel {
-    margin-left: 366px;
+    margin-left: 266px;
 }
 
 @media (max-width: 970px) {
+    div#page-body {
+        overflow: hidden;
+        margin: 16px;
+    }
+
     body.two-column #side-panel {
-        width: 91.5%;
-        margin:0 16px;
+        width: 100%;
+        margin:0 0px;
+        margin-bottom: 30px;
         float: none;
         position: relative;
-        padding-bottom: 0;
+        padding-bottom: 0px;
     }
 
     body.two-column #main-panel {
-        margin-left: 16px;
-        margin: 16px;
-        width: 91.5%;
+        margin-left: 0px;
+        margin: 0px;
+        width: 100%;
         padding: 16px;
         padding-bottom: 50px;
     }

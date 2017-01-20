@@ -262,7 +262,7 @@ ${h.initPageVariables(context)}
       var sidePanel = document.getElementById("side-panel");
       if (!sidePanel) {
         var mainPanel = document.getElementById("main-panel");
-        mainPanel.style.width = "91.5%";
+        mainPanel.style.width = "100%";
       }
       </script>
     </div>
