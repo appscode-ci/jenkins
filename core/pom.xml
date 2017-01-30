@@ -105,7 +105,7 @@ THE SOFTWARE.
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-posix</artifactId>
-      <version>3.0.1</version>
+      <version>3.0.15</version>
     </dependency>
     <dependency>
       <groupId>org.kohsuke</groupId>
@@ -177,7 +177,7 @@ THE SOFTWARE.
     <dependency>
       <groupId>com.infradna.tool</groupId>
       <artifactId>bridge-method-annotation</artifactId>
-      <version>1.13</version>
+      <version>1.15-SNAPSHOT</version>
     </dependency>
 
     <dependency><!-- until we get this version through Stapler -->
