@@ -100,7 +100,7 @@ THE SOFTWARE.
     <findbugs.failOnError>true</findbugs.failOnError>
     <test-annotations.version>1.2</test-annotations.version>
 
-    <java.level>7</java.level>
+    <java.level>8</java.level>
 
     <changelog.url>https://jenkins-ci.org/changelog</changelog.url>
   </properties>
@@ -246,7 +246,7 @@ THE SOFTWARE.
       <!-- for JRE requirement check annotation -->
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>animal-sniffer-annotations</artifactId>
-      <version>1.9</version>
+      <version>1.15</version>
       <scope>provided</scope>
       <optional>true</optional><!-- no need to have this at runtime -->
     </dependency>
@@ -481,7 +481,7 @@ THE SOFTWARE.
         <plugin>
           <groupId>com.infradna.tool</groupId>
           <artifactId>bridge-method-injector</artifactId>
-          <version>1.13</version>
+          <version>1.15-SNAPSHOT</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -648,7 +648,8 @@ THE SOFTWARE.
         <configuration>
           <signature>
             <groupId>org.codehaus.mojo.signature</groupId>
-            <artifactId>java1${java.level}</artifactId>
+            <artifactId>java17</artifactId>
+            <!--<artifactId>java1${java.level}</artifactId>-->
             <version>1.0</version>
           </signature>
         </configuration>
@@ -657,8 +658,10 @@ THE SOFTWARE.
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.${java.level}</source>
-          <target>1.${java.level}</target>
+          <source>1.7</source>
+          <target>1.7</target>
+          <!--<source>1.${java.level}</source>-->
+          <!--<target>1.${java.level}</target>-->
           <!-- default reuseCreated is more performant 
           feel free to uncomment if you have any issues on your platform
           <compilerReuseStrategy>alwaysNew</compilerReuseStrategy>
@@ -677,7 +680,7 @@ THE SOFTWARE.
             <configuration>
               <rules>
                 <requireJavaVersion>
-                  <version>1.7.0</version>
+                  <version>1.8.0</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
                   <version>3.0</version>
