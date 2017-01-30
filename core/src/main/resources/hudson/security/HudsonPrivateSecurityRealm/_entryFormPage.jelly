@@ -31,6 +31,7 @@ THE SOFTWARE.
         <!-- match width with captcha image -->
         INPUT {
           width:200px;
+          border: 1px solid #ddd;
         }
       </style>
     </l:header>
