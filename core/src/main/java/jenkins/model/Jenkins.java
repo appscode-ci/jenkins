@@ -118,7 +118,6 @@ import hudson.security.AccessControlled;
 import hudson.security.AuthorizationStrategy;
 import hudson.security.BasicAuthenticationFilter;
 import hudson.security.FederatedLoginService;
-import hudson.security.FullControlOnceLoggedInAuthorizationStrategy;
 import hudson.security.HudsonFilter;
 import hudson.security.LegacyAuthorizationStrategy;
 import hudson.security.LegacySecurityRealm;
@@ -252,7 +251,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.net.BindException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -1556,11 +1554,14 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
 
     /**
      * Gets the plugin object from its short name.
-     *
-     * <p>
      * This allows URL <tt>hudson/plugin/ID</tt> to be served by the views
      * of the plugin class.
+     * @param shortName Short name of the plugin
+     * @return The plugin singleton or {@code null} if for some reason the plugin is not loaded.
+     *         The fact the plugin is loaded does not mean it is enabled and fully initialized for the current Jenkins session.
+     *         Use {@link Plugin#getWrapper()} and then {@link PluginWrapper#isActive()} to check it.
      */
+    @CheckForNull
     public Plugin getPlugin(String shortName) {
         PluginWrapper p = pluginManager.getPlugin(shortName);
         if(p==null)     return null;
@@ -1574,12 +1575,15 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
      * This allows easy storage of plugin information in the plugin singleton without
      * every plugin reimplementing the singleton pattern.
      *
+     * @param <P> Class of the plugin
      * @param clazz The plugin class (beware class-loader fun, this will probably only work
      * from within the jpi that defines the plugin class, it may or may not work in other cases)
-     *
-     * @return The plugin instance.
+     * @return The plugin singleton or {@code null} if for some reason the plugin is not loaded.
+     *         The fact the plugin is loaded does not mean it is enabled and fully initialized for the current Jenkins session.
+     *         Use {@link Plugin#getWrapper()} and then {@link PluginWrapper#isActive()} to check it.
      */
     @SuppressWarnings("unchecked")
+    @CheckForNull
     public <P extends Plugin> P getPlugin(Class<P> clazz) {
         PluginWrapper p = pluginManager.getPlugin(clazz);
         if(p==null)     return null;
@@ -1689,11 +1693,6 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
      */
     @Exported(name="jobs")
     public List<TopLevelItem> getItems() {
-        if (authorizationStrategy instanceof AuthorizationStrategy.Unsecured ||
-            authorizationStrategy instanceof FullControlOnceLoggedInAuthorizationStrategy) {
-            return new ArrayList(items.values());
-        }
-
         List<TopLevelItem> viewableItems = new ArrayList<TopLevelItem>();
         for (TopLevelItem item : items.values()) {
             if (item.hasPermission(Item.READ))
@@ -2267,7 +2266,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
                 })
                 .add(new CollectionSearchIndex() {// for views
                     protected View get(String key) { return getView(key); }
-                    protected Collection<View> all() { return views; }
+                    protected Collection<View> all() { return viewGroupMixIn.getViews(); }
                 });
         return builder;
     }
@@ -2866,11 +2865,11 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
     /**
      * Gets the user of the given name.
      *
-     * @return the user of the given name (which may or may not be an id), if that person exists or the invoker {@link #hasPermission} on {@link #ADMINISTER}; else null
+     * @return the user of the given name (which may or may not be an id), if that person exists; else null
      * @see User#get(String,boolean), {@link User#getById(String, boolean)}
      */
     public @CheckForNull User getUser(String name) {
-        return User.get(name,hasPermission(ADMINISTER));
+        return User.get(name, User.ALLOW_USER_CREATION_VIA_URL && hasPermission(ADMINISTER));
     }
 
     public synchronized TopLevelItem createProject( TopLevelItemDescriptor type, String name ) throws IOException {
@@ -3776,9 +3775,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
             try {
                 r.put(e.getKey(), e.getValue().get(endTime-System.currentTimeMillis(), TimeUnit.MILLISECONDS));
             } catch (Exception x) {
-                StringWriter sw = new StringWriter();
-                x.printStackTrace(new PrintWriter(sw,true));
-                r.put(e.getKey(), Collections.singletonMap("Failed to retrieve thread dump",sw.toString()));
+                r.put(e.getKey(), Collections.singletonMap("Failed to retrieve thread dump", Functions.printThrowable(x)));
             }
         }
         return Collections.unmodifiableSortedMap(new TreeMap<String, Map<String, String>>(r));
@@ -4351,6 +4348,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
 
     @RequirePOST
     public void doFingerprintCleanup(StaplerResponse rsp) throws IOException {
+        checkPermission(ADMINISTER);
         FingerprintCleanupThread.invoke();
         rsp.setStatus(HttpServletResponse.SC_OK);
         rsp.setContentType("text/plain");
@@ -4359,6 +4357,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
 
     @RequirePOST
     public void doWorkspaceCleanup(StaplerResponse rsp) throws IOException {
+        checkPermission(ADMINISTER);
         WorkspaceCleanupThread.invoke();
         rsp.setStatus(HttpServletResponse.SC_OK);
         rsp.setContentType("text/plain");
