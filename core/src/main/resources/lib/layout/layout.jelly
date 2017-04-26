@@ -258,6 +258,15 @@ ${h.initPageVariables(context)}
          <j:set var="mode" value="main-panel" />
          <d:invokeBody/>
       </div>
+      <script type="text/javascript">
+        var sidePanel = document.getElementById("side-panel");
+        if (!sidePanel) {
+          var mainPanel = document.getElementById("main-panel");
+          mainPanel.style.width = "100%";
+          var parentDiv = document.getElementById("page-body");
+          parentDiv.style.marginLeft = "16px";
+        }
+      </script>
     </div>
 
     <footer>
