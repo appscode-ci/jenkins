@@ -22,9 +22,9 @@ version: 2.9.0
     position: relative;
     left:0;
     top:0;
-    border-style: solid;
-    border-width: 1px 0;
-    border-color: #808080;
+    /*border-style: solid;*/
+    /*border-width: 1px 0;*/
+    /*border-color: #808080;*/
     z-index: 1;
 
     /* Rollback rounded corner support for IE6/7 */
@@ -33,36 +33,47 @@ version: 2.9.0
     _zoom:normal;
 }
 
-.yui-skin-sam .yui-panel .hd,
+/*.yui-skin-sam .yui-panel .hd,*/
+/*.yui-skin-sam .yui-panel .bd,*/
+/*.yui-skin-sam .yui-panel .ft {*/
+    /*border-style: solid;*/
+    /*border-width: 0 1px;*/
+    /*border-color: #808080;*/
+    /*margin: 0 -1px;*/
+
+    /*!* Rollback rounded corner support for IE6/7 *!*/
+    /**margin:0;*/
+    /**border:0;*/
+/*}*/
+
+/*.yui-skin-sam .yui-panel .hd {*/
+    /*border-bottom: solid 1px #ccc;*/
+/*}*/
+
 .yui-skin-sam .yui-panel .bd,
 .yui-skin-sam .yui-panel .ft {
-    border-style: solid;
-    border-width: 0 1px;
-    border-color: #808080;
-    margin: 0 -1px;
-
-    /* Rollback rounded corner support for IE6/7 */
-    *margin:0;
-    *border:0;
+    background-color: #fff;
 }
 
 .yui-skin-sam .yui-panel .hd {
-    border-bottom: solid 1px #ccc;
+    /*padding: 0 10px;*/
+    /*font-size: 93%;  !* 12px *!*/
+    /*line-height: 2;  !* ~24px *!*/
+    /**line-height: 1.9; !* For IE *!*/
+    /*font-weight: bold;*/
+    /*color: #000;*/
+    /*background: url(../../../../assets/skins/sam/sprite.png) repeat-x 0 -200px;*/
+    border: 0;
 }
 
-.yui-skin-sam .yui-panel .bd,
-.yui-skin-sam .yui-panel .ft {
-    background-color: #F2F2F2;
+div#credentialsDialog {
+    height: 487px !important;
+    overflow: auto;
 }
 
-.yui-skin-sam .yui-panel .hd {
-    padding: 0 10px;
-    font-size: 93%;  /* 12px */
-    line-height: 2;  /* ~24px */
-    *line-height: 1.9; /* For IE */
-    font-weight: bold;
-    color: #000;
-    background: url(../../../../assets/skins/sam/sprite.png) repeat-x 0 -200px;
+.yui-skin-sam .yui-panel .hd h2 {
+    padding: 0;
+    margin: 0;
 }
 
 .yui-skin-sam .yui-panel .bd {
@@ -80,13 +91,13 @@ version: 2.9.0
 }
 
 .yui-skin-sam .container-close {
-    position: absolute;
-    top: 5px;
-    right: 6px;
-    width: 25px;
-    height: 15px;
-    background: url(../../../../assets/skins/sam/sprite.png) no-repeat 0 -300px;
-    cursor:pointer;
+    /* padding: 0 10px; */
+    font-size: 93%;
+    line-height: 2;
+    font-weight: bold;
+    color: #fff;
+    background: #3bb878;
+    /* background: url(sprite.png) repeat-x 0 -200px; */
 }
 
 /* Panel underlay styles */
