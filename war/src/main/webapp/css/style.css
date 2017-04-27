@@ -1621,7 +1621,7 @@ DIV.yahooTree td {
     text-decoration: none;
     min-width: 20px !important;
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 2px;
     position: relative;
     transition: all .1s;
     height: 20px;
@@ -1634,23 +1634,46 @@ DIV.yahooTree td {
 
 #visible-am-container div#visible-am-list {
     position: absolute;
-    top: 43px !important;
-    width: 320px;
-    right: 0 !important;
-    margin-right: 20px;
+    max-width: 300px;
     height: auto;
-    padding: 20px;
-    border: 0 solid #aaa;
+    z-index: 0;
+    top: 44px;
+    padding: 1em;
     text-align: left;
     display: block;
     background-color: #fff;
     border-radius: 3px;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, .1);
-    transition: all .15s cubic-bezier(.84, .03, .21, .96);
+    box-shadow: 0 7px 20px rgba(0,0,0,.1);
+    transition: all .15s cubic-bezier(.84,.03,.21,.96);
     opacity: 0;
     transform: scale(0);
 }
 
+.am-message form span span.first-child button#yui-gen1-button{
+    background: transparent;
+    color: #3bb878;
+    padding: 0;
+    margin: 0;
+}
+
+.am-message .warning form a {
+    color: #3bb878;
+}
+
+.am-message .warning {
+    background-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+.am-message {
+    margin: 0;
+    text-align: center;
+}
+
+#visible-am-container.visible #visible-am-button {
+    box-shadow: none !important;
+}
 @media only screen and (max-width: 640px) {
 
     #visible-am-container div#visible-am-list {
