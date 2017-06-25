@@ -23,16 +23,15 @@
 }
 #visible-am-container div#visible-am-list {
     position: absolute;
-    top: 35px;
-    right: 2%;
-    margin-left:2%;
+    max-width: 300px;
     height: auto;
     z-index: 0;
-    padding: 2em;
+    padding: 1em;
+    top:44px;
     text-align: left;
     display: block;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0 7px 20px rgba(0,0,0,.1);
     transition: all .15s cubic-bezier(.84,.03,.21,.96);
     opacity: 0;
@@ -65,5 +64,5 @@
 #visible-am-container .am-message {
     display: block;
     line-height: 1.4em;
-    margin-bottom: 1.4em;
+    margin-bottom: 0em;
 }
